@@ -13,11 +13,15 @@ import com.kh.java.model.StudentsVO;
 public class StudentsRegisterManager {
 	public static Scanner sc = new Scanner(System.in);
 	// 전체 학생 리스트 출력 기능 
-	public static void totalSelectManager() throws SQLException{
+	public static void totalSelectManager() throws SQLException {
 		ArrayList<StudentsVO> studentsList = new ArrayList<StudentsVO>();
 		studentsList = StudentsDAO.totalSelect();
-		printStudentsList(studentsList);
-	}	
+		if(studentsList == null) {
+			System.out.println("데이터가 존재하지 않습니다.");
+			return;
+		}
+		printStudentsList(studentsList); 
+	}
 	
 	public static void insertManager() throws SQLException {
 		// 3. statement
@@ -45,6 +49,7 @@ public class StudentsRegisterManager {
 	public static void updateManager() throws SQLException {
 		System.out.println("수정할 학생의 번호를 입력하세요: ");
 		int id = Integer.parseInt(sc.nextLine());
+		
 		System.out.println("새로운 이름을 입력하세요: ");
 		String name = sc.nextLine();
 		System.out.println("새로운 국어 점수를 입력하세요: ");
