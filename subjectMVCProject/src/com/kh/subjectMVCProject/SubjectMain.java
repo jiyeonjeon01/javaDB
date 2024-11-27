@@ -60,19 +60,23 @@ public class SubjectMain {
 		switch (no) {
 		case TRAINEE_CHOICE.INSERT:
 			System.out.println("");
-		//	srm.insertManager();
+			trm.insertManager();
 			break;
 		case TRAINEE_CHOICE.UPDATE:
 			System.out.println("");
-//			studnetManager.studnetUpdate();
+			trm.updateManager();
 			break;
 		case TRAINEE_CHOICE.LIST:
 			System.out.println("");
-//			studnetManager.studnetTotalList();
+			trm.selectManager();
 			break;
 		case TRAINEE_CHOICE.DELETE:
 			System.out.println("");
-//			studnetManager.studnetTotalList();
+			trm.deleteManager();
+			break;
+		case TRAINEE_CHOICE.JOIN_LIST:
+			System.out.println("");
+			trm.totalSelectManager();
 			break;
 		case TRAINEE_CHOICE.MAIN:
 			return;
@@ -89,21 +93,25 @@ public class SubjectMain {
 		MenuViewer.lessonMenuView();
 		no = Integer.parseInt(sc.nextLine());
 		switch (no) {
+		case LESSON_CHOICE.LIST:
+			System.out.println("");
+			lrm.selectManager();
+			break;
 		case LESSON_CHOICE.INSERT:
 			System.out.println("");
-		//	srm.insertManager();
+			lrm.insertManager();
 			break;
 		case LESSON_CHOICE.UPDATE:
 			System.out.println("");
-//			studnetManager.studnetUpdate();
-			break;
-		case LESSON_CHOICE.LIST:
-			System.out.println("");
-//			studnetManager.studnetTotalList();
+			lrm.updateManager();
 			break;
 		case LESSON_CHOICE.DELETE:
 			System.out.println("");
-//			studnetManager.studnetTotalList();
+			lrm.deleteManager();
+			break;
+		case LESSON_CHOICE.SORT:
+			System.out.println("");
+			lrm.selectSortManager();
 			break;
 		case LESSON_CHOICE.MAIN:
 			return;
